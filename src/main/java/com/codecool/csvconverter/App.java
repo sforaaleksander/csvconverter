@@ -8,7 +8,8 @@ public class App
             System.out.println("Please provide file name to convert");
             return;
         }
-        Converter converter = new Converter();
+        FileReader fileReader = new FileReader();
+        Converter converter = new Converter(fileReader);
         if (args.length == 1) {
             converter.convert(args[0], SupportedFormat.TABLE);
             return;
