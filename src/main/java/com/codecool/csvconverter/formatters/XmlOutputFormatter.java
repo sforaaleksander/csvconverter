@@ -1,4 +1,4 @@
-package com.codecool.csvconverter;
+package com.codecool.csvconverter.formatters;
 
 import java.io.File;
 

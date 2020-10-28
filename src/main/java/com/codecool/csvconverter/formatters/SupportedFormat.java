@@ -1,4 +1,4 @@
-package com.codecool.csvconverter;
+package com.codecool.csvconverter.formatters;
 
 public enum SupportedFormat {
     JSON("json"), XML("xml"), TABLE("table");

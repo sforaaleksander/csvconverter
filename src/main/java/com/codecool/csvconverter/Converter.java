@@ -1,5 +1,7 @@
 package com.codecool.csvconverter;
 
+import com.codecool.csvconverter.formatters.SupportedFormat;
+
 public class Converter {
     private FileReader fileReader;
 
