@@ -2,6 +2,8 @@ package com.codecool.csvconverter;
 
 import com.codecool.csvconverter.formatters.SupportedFormat;
 
+import java.io.File;
+
 public class App
 {
     public static void main( String[] args )
@@ -10,12 +12,13 @@ public class App
             System.out.println("Please provide file name to convert");
             return;
         }
+        File file = new File(args[0]);
         FileReader fileReader = new FileReader();
         Converter converter = new Converter(fileReader);
         if (args.length == 1) {
-            converter.convert(args[0], SupportedFormat.TABLE);
+            converter.convert(file, SupportedFormat.TABLE);
             return;
         }
-        converter.convert(args[1], SupportedFormat.valueOf(args[0].toUpperCase()));
+        converter.convert(file, SupportedFormat.valueOf(args[1].toUpperCase()));
     }
 }
