@@ -16,21 +16,12 @@ public class FileReader {
         }
     }
 
-    public String read() {
+    public String nextLine(){
         try {
             return bufferedReader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
             return "error occurred";
-        }
-    }
-
-    public boolean hasLine(){
-        try {
-            return bufferedReader.readLine() != null;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
         }
     }
 }

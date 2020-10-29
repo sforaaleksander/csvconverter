@@ -12,8 +12,7 @@ public abstract class OutputFormatter {
     public void printToConsole() {
         String line;
         StringBuilder sb = new StringBuilder();
-        while (fileReader.hasLine()) {
-            line = fileReader.read();
+        while ((line = fileReader.nextLine()) != null) {
             String[] elements = line.split(",");
             appendElementsToStringBuilder(sb, elements);
             sb.append("\n");
