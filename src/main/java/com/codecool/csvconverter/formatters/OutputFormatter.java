@@ -1,26 +1,25 @@
 package com.codecool.csvconverter.formatters;
 
-import java.io.*;
+import com.codecool.csvconverter.FileReader;
 
-public interface OutputFormatter {
+public abstract class OutputFormatter {
+    FileReader fileReader;
 
-   default void printToConsole(File data) throws IOException {
-       BufferedReader bufferedReader;
-       try {
-           bufferedReader = new BufferedReader(new FileReader(data));
-       } catch (FileNotFoundException e) {
-           e.printStackTrace();
-           return;
-       }
-       String line;
-       StringBuilder sb = new StringBuilder();
-       while ((line = bufferedReader.readLine()) != null) {
-           String[] elements = line.split(",");
-           appendElementsToStringBuilder(sb, elements);
-           sb.append("\n");
-       }
-       System.out.println(sb.toString());
-   }
+    public void setFileReader(FileReader fileReader) {
+        this.fileReader = fileReader;
+    }
 
-    void appendElementsToStringBuilder(StringBuilder sb, String[] elements);
+    public void printToConsole() {
+        String line;
+        StringBuilder sb = new StringBuilder();
+        while (fileReader.hasLine()) {
+            line = fileReader.read();
+            String[] elements = line.split(",");
+            appendElementsToStringBuilder(sb, elements);
+            sb.append("\n");
+        }
+        System.out.println(sb.toString());
+    }
+
+    abstract void appendElementsToStringBuilder(StringBuilder sb, String[] elements);
 }

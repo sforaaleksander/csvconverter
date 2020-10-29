@@ -1,6 +1,6 @@
 package com.codecool.csvconverter.formatters;
 
-public class JsonOutputFormatter implements OutputFormatter {
+public class JsonOutputFormatter extends OutputFormatter {
 
     public void appendElementsToStringBuilder(StringBuilder sb, String[] elements) {
         sb.append("{");

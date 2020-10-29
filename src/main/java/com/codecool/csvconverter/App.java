@@ -13,12 +13,12 @@ public class App
             return;
         }
         File file = new File(args[0]);
-        FileReader fileReader = new FileReader();
+        FileReader fileReader = new FileReader(file);
         Converter converter = new Converter(fileReader);
         if (args.length == 1) {
-            converter.convert(file, SupportedFormat.TABLE);
+            converter.convert(SupportedFormat.TABLE);
             return;
         }
-        converter.convert(file, SupportedFormat.valueOf(args[1].toUpperCase()));
+        converter.convert(SupportedFormat.valueOf(args[1].toUpperCase()));
     }
 }

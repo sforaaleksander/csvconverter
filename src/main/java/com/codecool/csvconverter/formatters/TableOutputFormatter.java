@@ -1,6 +1,6 @@
 package com.codecool.csvconverter.formatters;
 
-public class TableOutputFormatter implements OutputFormatter {
+public class TableOutputFormatter extends OutputFormatter {
 
     @Override
     public void appendElementsToStringBuilder(StringBuilder sb, String[] elements) {

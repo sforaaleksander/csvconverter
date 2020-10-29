@@ -1,6 +1,6 @@
 package com.codecool.csvconverter.formatters;
 
-public class XmlOutputFormatter implements OutputFormatter {
+public class XmlOutputFormatter extends OutputFormatter {
 
     @Override
     public void appendElementsToStringBuilder(StringBuilder sb, String[] elements) {
