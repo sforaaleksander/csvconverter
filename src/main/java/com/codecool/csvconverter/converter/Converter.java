@@ -1,12 +1,13 @@
-package com.codecool.csvconverter;
+package com.codecool.csvconverter.converter;
 
+import com.codecool.csvconverter.filereader.FileReader;
 import com.codecool.csvconverter.formatters.OutputFormatter;
 import com.codecool.csvconverter.formatters.OutputFormatterFactory;
 import com.codecool.csvconverter.formatters.SupportedFormat;
 
 
 public class Converter {
-    private FileReader fileReader;
+    private final FileReader fileReader;
 
     public Converter(FileReader fileReader) {
     this.fileReader = fileReader;

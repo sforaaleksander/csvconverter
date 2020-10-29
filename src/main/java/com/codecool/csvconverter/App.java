@@ -1,5 +1,7 @@
 package com.codecool.csvconverter;
 
+import com.codecool.csvconverter.converter.Converter;
+import com.codecool.csvconverter.filereader.FileReader;
 import com.codecool.csvconverter.formatters.SupportedFormat;
 
 import java.io.File;

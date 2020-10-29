@@ -1,4 +1,4 @@
-package com.codecool.csvconverter;
+package com.codecool.csvconverter.filereader;
 
 import java.io.BufferedReader;
 import java.io.File;

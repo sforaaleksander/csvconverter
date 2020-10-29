@@ -1,6 +1,6 @@
 package com.codecool.csvconverter.formatters;
 
-import com.codecool.csvconverter.FileReader;
+import com.codecool.csvconverter.filereader.FileReader;
 
 public abstract class OutputFormatter {
     FileReader fileReader;
