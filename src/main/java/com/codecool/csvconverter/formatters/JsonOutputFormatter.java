@@ -1,31 +1,9 @@
 package com.codecool.csvconverter.formatters;
 
-import java.io.*;
-
 public class JsonOutputFormatter implements OutputFormatter {
-    @Override
-    public void printToConsole(File data) throws IOException {
-        BufferedReader bufferedReader = null;
-        try {
-            bufferedReader = new BufferedReader(new FileReader(data));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return;
-        }
-        String line;
-        StringBuilder sb = new StringBuilder();
-        while ((line = bufferedReader.readLine()) != null) {
-            sb.append("{");
-            String[] elements = line.split(",");
-            appendElementsToStringBuilder(sb, elements);
-            sb.append("}");
-            sb.append("\n");
-        }
-        System.out.println(sb.toString());
-        System.out.println("Printing json");
-    }
 
-    private void appendElementsToStringBuilder(StringBuilder sb, String[] elements) {
+    public void appendElementsToStringBuilder(StringBuilder sb, String[] elements) {
+        sb.append("{");
         for (int i=0;i<elements.length;i++) {
             if (elements[i].equals("")){
                 continue;
@@ -37,5 +15,6 @@ public class JsonOutputFormatter implements OutputFormatter {
                 sb.append(", ");
             }
         }
+        sb.append("}");
     }
 }

@@ -1,8 +1,27 @@
 package com.codecool.csvconverter.formatters;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public interface OutputFormatter {
-    void printToConsole(File data) throws IOException;
+
+   default void printToConsole(File data) throws IOException {
+       BufferedReader bufferedReader;
+       try {
+           bufferedReader = new BufferedReader(new FileReader(data));
+       } catch (FileNotFoundException e) {
+           e.printStackTrace();
+           return;
+       }
+       String line;
+       StringBuilder sb = new StringBuilder();
+       while ((line = bufferedReader.readLine()) != null) {
+           String[] elements = line.split(",");
+           appendElementsToStringBuilder(sb, elements);
+           sb.append("\n");
+       }
+       System.out.println(sb.toString());
+   }
+
+    void appendElementsToStringBuilder(StringBuilder sb, String[] elements);
+
 }
