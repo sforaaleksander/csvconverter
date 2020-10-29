@@ -5,8 +5,9 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="file" class="java.io.File">
-        <constructor-arg ref=""/>
+
+    <bean id="file" class="java.io.File" scope="prototype">
+        <constructor-arg value="test.csv"/>
     </bean>
 
     <bean id="fileReader" class="com.codecool.csvconverter.filereader.FileReader">
