@@ -1,7 +1,5 @@
 package com.codecool.csvconverter.formatters;
 
-import java.io.*;
-
 public class TableOutputFormatter implements OutputFormatter {
 
     @Override

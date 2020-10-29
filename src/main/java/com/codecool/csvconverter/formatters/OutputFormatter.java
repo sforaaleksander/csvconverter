@@ -23,5 +23,4 @@ public interface OutputFormatter {
    }
 
     void appendElementsToStringBuilder(StringBuilder sb, String[] elements);
-
 }
