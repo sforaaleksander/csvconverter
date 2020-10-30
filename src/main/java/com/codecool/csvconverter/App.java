@@ -4,8 +4,7 @@ import com.codecool.csvconverter.converter.Converter;
 import com.codecool.csvconverter.filereader.FileReader;
 import com.codecool.csvconverter.formatters.SupportedFormat;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.File;
 
@@ -18,7 +17,7 @@ public class App
             return;
         }
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/config.xml");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
 
         File file = new File(args[0]);
 
