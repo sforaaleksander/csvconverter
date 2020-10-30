@@ -16,10 +16,11 @@ public class App
             System.out.println("Please provide file name to convert");
             return;
         }
+        Config.setPath(args[0]);
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
-
-        File file = new File(args[0]);
+        
+        File file = (File) applicationContext.getBean("file");
 
         FileReader fileReader = (FileReader) applicationContext.getBean("fileReader");
         
