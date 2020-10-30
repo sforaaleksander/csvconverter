@@ -7,11 +7,10 @@
     <!-- bean definitions here -->
 
     <bean id="file" class="java.io.File" scope="prototype">
-        <constructor-arg value="test.csv"/>
+        <constructor-arg value="0"/>
     </bean>
 
     <bean id="fileReader" class="com.codecool.csvconverter.filereader.FileReader">
-        <constructor-arg ref="file"/>
     </bean>
 
     <bean id="converter" class="com.codecool.csvconverter.converter.Converter">

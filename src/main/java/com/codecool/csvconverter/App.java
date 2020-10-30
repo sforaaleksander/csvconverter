@@ -20,13 +20,12 @@ public class App
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/config.xml");
 
-//        File file = applicationContext.getBean(File.class, args[0]);
+        File file = applicationContext.getBean(File.class, args[0]);
 
-        File file = (File) applicationContext.getBean("file");
+        FileReader fileReader = (FileReader) applicationContext.getBean("fileReader");
+        
+        fileReader.setFile(file);
 
-        System.out.println(file.getName());
-
-        FileReader fileReader = (FileReader) applicationContext.getBean("fileReader", file);
         Converter converter = (Converter) applicationContext.getBean("converter", fileReader);
         if (args.length == 1) {
             converter.convert(SupportedFormat.TABLE);

@@ -7,8 +7,10 @@ import java.io.IOException;
 
 public class FileReader {
     BufferedReader bufferedReader;
+    File file;
 
-    public FileReader(File file) {
+    public void setFile(File file) {
+        this.file = file;
         try {
             bufferedReader = new BufferedReader(new java.io.FileReader(file));
         } catch (FileNotFoundException e) {
