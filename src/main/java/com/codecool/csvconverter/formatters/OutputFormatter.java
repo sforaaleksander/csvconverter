@@ -1,10 +1,12 @@
 package com.codecool.csvconverter.formatters;
 
 import com.codecool.csvconverter.filereader.FileReader;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class OutputFormatter {
     FileReader fileReader;
 
+    @Autowired
     public void setFileReader(FileReader fileReader) {
         this.fileReader = fileReader;
     }

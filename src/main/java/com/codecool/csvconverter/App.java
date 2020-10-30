@@ -20,7 +20,7 @@ public class App
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/config.xml");
 
-        File file = applicationContext.getBean(File.class, args[0]);
+        File file = new File(args[0]);
 
         FileReader fileReader = (FileReader) applicationContext.getBean("fileReader");
         
